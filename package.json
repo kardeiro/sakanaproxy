@@ -1,0 +1,50 @@
+{
+  "name": "@kardeiro/sakanaproxy",
+  "version": "1.0.0",
+  "description": "Local OpenAI-compatible proxy API that routes requests to Sakana Chat (chat.sakana.ai) using session cookies, with multi-account rotation, streaming, reasoning support and tool execution.",
+  "scripts": {
+    "start": "npx tsx src/index.ts",
+    "login": "npx tsx src/login.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "tsx --test src/**/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "openai",
+    "proxy",
+    "sakana",
+    "sakana-ai",
+    "namazu",
+    "llm",
+    "api",
+    "chat-completions"
+  ],
+  "author": "kardeiro",
+  "license": "ISC",
+  "dependencies": {
+    "@hono/node-server": "^1.13.8",
+    "better-sqlite3": "^11.7.0",
+    "dotenv": "^16.4.7",
+    "hono": "^4.6.14",
+    "tsx": "^4.19.2",
+    "uuid": "^10.0.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.10.5",
+    "@types/uuid": "^10.0.0",
+    "typescript": "^5.7.3"
+  },
+  "bin": {
+    "sakanaproxy": "./bin/sakanaproxy.mjs"
+  },
+  "files": [
+    "src/**/*",
+    "bin/**/*"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
